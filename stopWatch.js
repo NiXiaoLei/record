@@ -22,7 +22,10 @@ const createWatch = (() => {
       }
       const getKeep  = () => getEnd() - startMap[k]
       // 重新计算进入时间
-      const refresh  = () => startMap[k] = +new Date()
+      const refresh  = () => {
+        startMap[k] = +new Date()
+        endMap[k] = undefined
+      }
       // 获取说明注释
       const getDesc  = () => descMap[k] == undefined ? '' : descMap[k]
       // 设置说明注释
