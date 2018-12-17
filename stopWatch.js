@@ -1,7 +1,9 @@
 const createWatch = (() => {
   let startMap = {
-    main: +new Date(),
-    end: null
+    main: +new Date()
+  }
+  let endMap = {
+    main: null
   }
   let descMap = {}
 
@@ -14,7 +16,10 @@ const createWatch = (() => {
       if( startMap[k] === undefined ) return undefined
       const getName = () => k
       const getStart = () => startMap[k]
-      const getEnd   = () => +new Date();
+      const getEnd   = () => {
+        if(endMap[k] === undefined ) endMap[k] = +new Date 
+        return endMap[k]
+      }
       const getKeep  = () => getEnd() - startMap[k]
       // 重新计算进入时间
       const refresh  = () => startMap[k] = +new Date()
