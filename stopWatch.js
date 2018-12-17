@@ -2,9 +2,7 @@ const createWatch = (() => {
   let startMap = {
     main: +new Date()
   }
-  let endMap = {
-    main: null
-  }
+  let endMap = {}
   let descMap = {}
 
   let createMethods = (key='') => {
